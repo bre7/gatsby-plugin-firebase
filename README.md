@@ -1,19 +1,19 @@
-# gatsby-plugin-netlify
+# gatsby-plugin-firebase
 
-Automatically generates a `_headers` file and a `_redirects` file at the root of the public folder to configure
-[HTTP headers](https://www.netlify.com/docs/headers-and-basic-auth/) and [redirects](https://www.netlify.com/docs/redirects/) on Netlify.
+Automatically generates a `firebase.json` file at the root of the public folder to configure
+[HTTP headers](https://firebase.google.com/docs/hosting/full-config#headers) and [redirects](https://firebase.google.com/docs/hosting/full-config#redirects) on Firebase.
 
 By default, the plugin will add some basic security headers. You can easily add or replace headers through the plugin config.
 
 ## Install
 
-`npm install --save gatsby-plugin-netlify`
+`yarn install --save bre7/gatsby-plugin-firebase`
 
 ## How to use
 
 ```javascript
 // In your gatsby-config.js
-plugins: [`gatsby-plugin-netlify`]
+plugins: [`gatsby-plugin-firebase`]
 ```
 
 ## Configuration
@@ -25,7 +25,7 @@ transform the given headers, you can use the following configuration options.
 ```javascript
 plugins: [
   {
-    resolve: `gatsby-plugin-netlify`,
+    resolve: `gatsby-plugin-firebase`,
     options: {
       headers: {}, // option to add more headers. `Link` headers are transformed by the below criteria
       allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
